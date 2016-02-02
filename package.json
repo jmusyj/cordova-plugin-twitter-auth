@@ -1,0 +1,29 @@
+{
+  "name": "uforia-plugin-twitter-auth",
+  "version": "1.0",
+  "description": "Twitter Authentication",
+  "cordova": {
+    "id": "uforia-plugin-twitter-auth",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmusyj/cordova-plugin-twitter-auth.git"
+  },
+  "keywords": [    
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Jason Musyj @jaymusyj",
+  "license": "MIT",
+  "homepage": "https://github.com/jmusyj/cordova-plugin-twitter-auth"
+}

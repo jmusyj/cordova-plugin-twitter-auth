@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.uforia.twitterAuth"
+      version="0.1.0">
+    <name>TwitterAuthPlugin</name>
+    <description>Twitter Authentication Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap</keywords>
+  
+    <js-module src="www/TwitterAuthPlugin.js" name="TwitterAuthPlugin">
+        <clobbers target="window.TwitterAuthPlugin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TwitterAuthPlugin">
+                <param name="android-package" value="com.uforia.twitterAuth.TwitterAuthPlugin"/>
+            </feature>
+        </config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">			
+		</config-file>
+ 
+        <source-file src="src/android/com/uforia/twitterAuth/TwitterAuthPlugin.java" target-dir="src/com/uforia/twitterAuth" />      
+     
+	 </platform>          
+</plugin>
