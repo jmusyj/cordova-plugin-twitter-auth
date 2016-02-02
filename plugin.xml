@@ -24,10 +24,8 @@
 		<config-file target="AndroidManifest.xml" parent="/*">			
 		</config-file>
  
-        <source-file src="src/android/com/uforia/twitterAuth/TwitterAuthPlugin.java" target-dir="src/com/uforia/twitterAuth" />      
-		<source-file src="src/android/libs/twitter4j-async-4.0.4.jar" target-dir="libs" />
-		<source-file src="src/android/libs/twitter4j-core-4.0.4.jar" target-dir="libs" />
-		<source-file src="src/android/libs/twitter4j-stream-4.0.4.jar" target-dir="libs" />
+        <source-file src="src/android/com/uforia/twitterAuth/TwitterAuthPlugin.java" target-dir="src/com/uforia/twitterAuth" />      		
+		<source-file src="src/android/libs/twitter4j-core-4.0.4.jar" target-dir="libs" />		
      
 	 </platform>          
 </plugin>
