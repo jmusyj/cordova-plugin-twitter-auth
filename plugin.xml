@@ -21,7 +21,7 @@
             </feature>
         </config-file>
 		
-		<config-file target="AndroidManifest.xml" parent="/manifest/application/activity[1]">
+		<!--<config-file target="AndroidManifest.xml" parent="/manifest/application/activity[1]">
 			
 				<intent-filter>
 					<data android:scheme="com.uforia.auth" />
@@ -34,7 +34,7 @@
 					<data android:scheme="http" android:host="com.uforia" android:pathPattern="/twitter-access-tokens" />
 				</intent-filter>
 			
-		</config-file>
+		</config-file>-->
  
         <source-file src="src/android/com/uforia/twitterAuth/TwitterAuthPlugin.java" target-dir="src/com/uforia/twitterAuth" />      		
 		<source-file src="src/android/libs/twitter4j-core-4.0.4.jar" target-dir="libs" />		
