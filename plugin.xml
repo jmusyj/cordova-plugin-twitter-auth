@@ -21,7 +21,17 @@
             </feature>
         </config-file>
 		
-		<config-file target="AndroidManifest.xml" parent="/*">			
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<intent-filter>
+                <data android:scheme="com.uforia.auth" />
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+			<intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" android:host="com.uforia" android:pathPattern="/twitter-access-tokens" />
+            </intent-filter>
 		</config-file>
  
         <source-file src="src/android/com/uforia/twitterAuth/TwitterAuthPlugin.java" target-dir="src/com/uforia/twitterAuth" />      		
