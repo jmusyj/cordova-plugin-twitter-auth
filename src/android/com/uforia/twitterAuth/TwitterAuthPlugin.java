@@ -19,14 +19,11 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class TwitterAuthPlugin extends CordovaPlugin {
 
-    private CallbackContext CallbackContext = null;
-
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        CallbackContext = callbackContext;
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {        
         if (action.equals("Login")) {
             try {
-                twitterAuth();
+                twitterAuth(callbackContext);
             } catch (TwitterException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -36,26 +33,21 @@ public class TwitterAuthPlugin extends CordovaPlugin {
         return false;
     }
 
-    void twitterAuth() throws TwitterException, IOException {
-
+    void twitterAuth(CallbackContext callbackContext) throws TwitterException, IOException {
         ConfigurationBuilder builder = new ConfigurationBuilder();
         builder.setOAuthConsumerKey("rf0TfX650MY1WBY9maItlHmVR");
         builder.setOAuthConsumerSecret("KjdkqZ7tv3c1SeK3Y7GOBEQ6Ss0UxsPhVus0wcUwNfEbQOGeu8");
         twitter4j.conf.Configuration configuration = builder.build();
         TwitterFactory factory = new TwitterFactory(configuration);
         Twitter twitter = factory.getInstance();
-
         final RequestToken requestToken = twitter.getOAuthRequestToken("http://com.uforia/twitter-access-tokens");
-
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 cordova.getActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(requestToken.getAuthenticationURL())));
             }
         });
-
-
         PluginResult result = new PluginResult(PluginResult.Status.OK);
-        CallbackContext.sendPluginResult(result);
+        callbackContext.sendPluginResult(result);
     }
 
     @Override
